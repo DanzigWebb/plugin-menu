@@ -1,6 +1,8 @@
 @import "../../libs/hamburgers/hamburgers.scss"
-@import "menu" 
-$acc: #ff5252
+@import "vars"
+@import "menu"
+@import "tabs" 
+
   
 html
   overflow-x: hidden
@@ -14,24 +16,32 @@ body
       z-index: -1
 
 .main
-  position: relative
   transition: .4s
   min-height: 100vh
+  z-index: 1
+  background: #fff
 .header
   height: 70px
-  background-color: #fdfdfd
+  background-color: #f4f3f3
   box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.15)
   max-width: 1200px
   position: absolute
   right: 0
   left: 0
   width: 100%
-  margin: 40px auto 
+  margin: auto
+  margin-bottom: 40px
   display: flex
   align-items: center
   justify-content: flex-end
   padding: 10px 90px
 
+.btn-wrap
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 40px 0
 
 
 ///////////////////////////////////////////////////
@@ -53,3 +63,7 @@ h1
     margin: auto
     margin-top: 30px
     color: #555
+
+.heading
+  margin: 60px 0
+

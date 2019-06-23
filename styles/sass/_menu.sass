@@ -1,5 +1,5 @@
 .my-sidemenu
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   width: 400px
@@ -9,11 +9,10 @@
   padding: 0
   background-color: #fff
   box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.3)
-  transform: translateX(100%)
   transition: .6s ease all
   display: grid
   align-items: center
-  z-index: 999999
+  z-index: -1
   @media (max-width: 480px)
     width: 320px
   ul
@@ -38,3 +37,4 @@
   right: 0
   bottom: 0
   transition: .4s
+  z-index: -1
