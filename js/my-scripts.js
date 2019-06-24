@@ -12,9 +12,12 @@ class Slider {
           this.open();
         }
         menuLinks.forEach(link => {
-          if (e.target == overlay || e.target == link) {
-            this.close();
+          if (e.target !== this.hamburger) {
+            if (e.target !== menu || e.target == link) {
+              this.close();
+            }
           }
+
         });
       });
     };
