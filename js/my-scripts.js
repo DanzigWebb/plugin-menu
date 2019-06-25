@@ -17,7 +17,6 @@ class Slider {
               this.close();
             }
           }
-
         });
       });
     };
@@ -70,5 +69,46 @@ class Tabs {
         param[i].classList.remove('active');
       }
     };
+  }
+}
+
+///////////////////////////////////////////////////////
+// carousel
+///////////////////////////////////////////////////////
+
+class Carousel {
+  constructor(btn, content) {
+    this.butt = document.querySelectorAll(btn);
+    this.area = document.querySelectorAll(content);
+    let self = this;
+
+
+    this.init = function () {
+      let params = {
+        activeItem: 0
+      }
+      this.nulled(this.butt, this.area);
+      this.butt[params.activeItem].classList.add('active');
+      this.area[params.activeItem].style.height = 'auto';
+
+      this.butt.forEach(function (btn, i, arr) {
+        btn.addEventListener('click', () => {
+          self.nulled(self.butt, self.area);
+          btn.classList.add('active');
+          btn.nextElementSibling.style.height = `${btn.nextElementSibling.scrollHeight}px`
+        })
+      })
+    }
+
+
+    this.nulled = function (btn, ar) {
+      btn.forEach(item => {
+        item.classList.remove('active')
+      })
+      ar.forEach(item => {
+        item.style.height = '0'
+      })
+
+    }
   }
 }
